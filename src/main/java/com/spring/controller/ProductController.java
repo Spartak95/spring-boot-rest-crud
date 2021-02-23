@@ -1,8 +1,12 @@
 package com.spring.controller;
 
 import com.spring.entity.Product;
+import com.spring.exception_handling.ProductIncorrectData;
+import com.spring.exception_handling.NoSuchProductException;
 import com.spring.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,12 +38,12 @@ public class ProductController {
     }
 
     @GetMapping("/productById/{id}")
-    public Product findProductById(@PathVariable int id) {
+    public Product findProductById(@PathVariable int id) throws NoSuchProductException {
 
         Product productById = productService.getProductById(id);
 
         if (productById == null) {
-
+            throw new NoSuchProductException("There is no product with ID = " + id + " int Database");
         }
 
         return productById;

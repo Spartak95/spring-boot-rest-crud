@@ -1,9 +1,9 @@
 package com.spring.exception_handling;
 
-public class EmployeeIncorrectData {
+public class ProductIncorrectData {
     private String info;
 
-    public EmployeeIncorrectData() {
+    public ProductIncorrectData() {
     }
 
     public String getInfo() {
