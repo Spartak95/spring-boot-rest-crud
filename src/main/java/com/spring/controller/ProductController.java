@@ -1,12 +1,9 @@
 package com.spring.controller;
 
 import com.spring.entity.Product;
-import com.spring.exception_handling.ProductIncorrectData;
 import com.spring.exception_handling.NoSuchProductException;
 import com.spring.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
